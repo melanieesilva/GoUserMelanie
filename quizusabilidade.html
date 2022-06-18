@@ -657,7 +657,7 @@
         font-size: 140%;
       }
     </style>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 function FocusAButton(){
 	if (document.getElementById('CheckButton1') != null){
@@ -954,11 +954,11 @@ var YourScoreIs = 'Sua pontuação é de ';
 
 //New for 6.2.2.0
 var CompletedSoFar = 'Questões efetivadas:';
-var ExerciseCompleted = 'You have completed the exercise.';
+var ExerciseCompleted = 'Você completou o quiz.';
 var ShowCompletedSoFar = true;
 
 var ContinuousScoring = true;
-var CorrectFirstTime = 'Questions answered correctly first time: ';
+var CorrectFirstTime = 'Perguntas respondidas corretamente na primeira vez: ';
 var ShowCorrectFirstTime = true;
 var ShuffleQs = false;
 var ShuffleAs = false;
@@ -1567,7 +1567,7 @@ function CheckFinished(){
 		}
 		Detail += '</fields></hpnetresult>';
 
-		botaocertificado.className.add('ativo');
+		$('.btn_certificado').addClass('ativo');
 		console.log("feito");
 	}
 
@@ -1638,7 +1638,7 @@ function CheckFinished(){
 <button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;" style="padding-right:20px;padding-left:20px; margin-bottom: 20px">&#160;OK&#160;</button>
 </div>
 
-<div class="btn_certificado ativo">
+<div class="btn_certificado">
 	<a href="certificado.html">
 	<button style="padding-right:20px;padding-left:20px;">Acessar certificado</button>
 	</a>
