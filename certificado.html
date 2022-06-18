@@ -1,27 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seu Certificado - GoUser</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,800;1,900&display=swap');
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        font-family: Montserrat, sans-serif;
+        background-color: #f1f1f1;
+        width: 100%;
+        height:110vh;
+      }
+      header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+      }
+      .logo_texto{
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+      nav a{
+        color: #0B95FF;
+      }
+      nav a:active{
+        color: #0B95FF;
+      }
+      nav p{
+        font-weight: 500;
+      }
+      #formulario_container{
+        width: 60%;
+        height: 80%;
+        margin: auto;
+        display: flex;
+        border-radius: 25px;
+        overflow: hidden;
+      }
+      .form_display{
+        background-color: #FFFFFF;
+        width: 60%;
+        height: 100%;
+        display: block;
+      }
+      .form_control{
+        background-color: #FFFFFF;
+        width: 60%;
+        height: 100%;
+      }
+      .conteudo_form{
+        background-color: #F9F9F9;
+        height: 20%;
+        margin-top: 25%;
+        width: 80%;
+        height: 70%;
+        border-radius: 10px;
+        padding-top: 45px;
+        box-shadow: 0px 0px 5px rgb(122, 122, 122);
+      }
+      .conteudo_form label{
+        margin-left: 35px;
+      }
+      .conteudo_form input{
+        margin-left: 35px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 230px;
+        border: none;
+        border-radius: 15px;
+        background-color: #EBEBEB;
+        padding: 15px;
+      }
+      .conteudo_form p{
+        margin-left: 35px;
+        margin-bottom: 30px;
+        font-weight: 550;
+        color: #414141;
+      }
+      .conteudo_form button{
+        background-color: #0B95FF;
+        color: white;
+        font-weight: 550;
+        border: none;
+        border-radius: 40px;
+        width: 150px;
+        height: 40px;
+        margin-left: 80px;
+        margin-top: 15px;
+        font-size: 0.9rem;
+        padding-left: 8px;
+        padding-right: 8px;
+        cursor: pointer;
+      }
+      .conteudo_display{
+        margin-left: 45px;
+        margin-top: 45px;
+      }
+      .conteudo_display p{
+        font-weight: 600;
+        color: rgba(105, 105, 105, 1);
+        font-size: 1.3rem;
+        margin-bottom: 60px;
+      }
+      .conteudo_display h3{
+        font-size: 1.5rem;
+        color: #303030;
+      }
+      .img_display{
+        max-width: 300px;
+        max-height: 300px;
+        margin-left: 55px;
+      }
+      .img_display img{
+        width: 100%;
+      }
+      .caminhos{
+        width: 60%;
+        margin: auto;
+        margin-bottom: 15px;
+        display: flex;
+      }
+      .container_certificado{
+        background-color: white;
+        width: 95%;
+        height: 80%;
+        margin: auto;
+        border-radius: 30px;
+        overflow: hidden;
+        display: none;
+      }
+      @media print{
+        .container_certificado{
+          display: flex;
+        }
+        header{
+          display: none;
+        }
+        .caminhos{
+          display: none;
+        }
+        #formulario_container{
+          display: none;
+        }
+      }
+      .display_certificado{
+        width: 45%;
+        height: 100%;
+        background-color:#0B95FF;
+        overflow: hidden;
+        align-items: center;
+        text-align: center;
+        display: block;
+      }
+      .display_certificado p{
+        font-weight: 700;
+        font-size: 2rem;
+        color: white;
+        margin-top: 80px;
+      }
+      .woman{
+        width: 330px;
+        height: 200px;
+        margin-top: 70px;
+        margin-left: 10px;
+      }
+      .woman img{
+        width: 100%;
+      }
+      .display_nome{
+        background-color:white;
+        width: 80%;
+        overflow: hidden;
+      }
+      .conteudo_certi{
+        width: 600px;
+        height: 75%;
+        margin-top: 80px;
+        margin-left: 45px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+      }
+      .conteudo_certi h2{
+        font-size: 3rem;
+        margin-bottom: 40px;
+        color: rgba(255, 199, 0, 1);
+      }
+      .img_assinatura{
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
   </head>
   <body>
-    <div id="formulario">
-      <label for="nome_usuario"></label>
-      <input type="text" id="nome_usuario" />
-      <label for="sobrenome_usuario"></label>
-      <input type="text" id="sobrenome_usuario" />
-      <button onclick="gerarCertificado()">Emitir certificado</button>
+    <header>
+      <div class="logo_texto">
+        <p>GoUser</p>
+      </div>
+      <nav>
+        <a href=""><p>Voltar para página da GoUser</p></a>
+      </nav>
+    </header>
+    <div class="caminhos">
+      <p>Você está em: Seu Certificado > 
+      <a href="https://melanieesilva.github.io/GoUserMelanie/quizusabilidade.html">Quiz GoUser </a>> 
+      <a href="https://melanieesilva.github.io/GoUserMelanie/">Página Inicial - Quiz </a>>
+        <a href="#">GoUser</a></p>
     </div>
-    <div id="print_certificado">
-      <p>Certificamos:</p>
-      <p id="print_nomeusuario"></p>
+    <div id="formulario_container">
+      <div class="form_display">
+        <div class="conteudo_display">
+          <p>Gerando seu certificado</p>
+        <h3 style="color:#0B95FF;">Parabéns, User!</h3>
+        <h3 style="margin-bottom:60px;">Você concluiu o quiz e agora falta pouco para
+        gerar seu certificado.</h3>
+        </div>
+        <div class="img_display">
+          <img src="meninajoinha.png" alt="Menina sentada fazendo um sinal de legal para cima">
+        </div>
+      </div>
+      <div class="form_control">
+        <div class="conteudo_form">
+          <p>Informe seu nome e<br>sobrenome</p>
+          <label for="nome_usuario">Nome*:</label><br>
+          <input type="text" id="nome_usuario"/><br>
+          <label for="sobrenome_usuario">Sobrenome*:</label><br>
+          <input type="text" id="sobrenome_usuario" /><br>
+          <button onclick="gerarCertificado()">Emitir certificado</button>
+        </div>
+        
+      </div>
     </div>
+
+
+      <div class="container_certificado">
+
+        <div class="display_certificado">
+          <img src="Vector 1.png" alt="">
+          <p>GoUser</p>
+          <div class="woman">
+            <img src="Design.png" alt="Mulher com múltiplos braços segurando uma régua, um planetário, um conta gotas e editando um painel monocromático">
+          </div>
+          
+        </div>
+
+        <div class="display_nome">
+          <div class="conteudo_certi">
+            <p style="font-weight: 700;
+          font-size: 2.5rem;color:#0B95FF;">Certificado de<br>conclusão</p>
+          <p style="font-weight:500;font-size:1.6rem;margin-top: 30px;margin-bottom:60px;">Apresentado para</p>
+          <h2 id="print_nomeusuario"></h2>
+          <p style="font-size:1rem;max-width:400px;">Por concluir o quiz da GoUser sobre Usabilidade na Web em <span id="data"></span>.</p>
+          <div class="img_assinatura">
+            <img src="assinatura.png" alt="">
+            <p style="margin-top:10px;font-weight: 600;">Desenvolvedora GoUser</p>
+          </div>
+          
+          </div>
+          
+        </div>
+
+    </div>
+
+    
+    
     <script>
         function gerarCertificado(){
             document.getElementById('print_nomeusuario').innerHTML = document.getElementById('nome_usuario').value+' '+document.getElementById('sobrenome_usuario').value;
+            document.getElementById('data').innerHTML = dataAtual();
             window.print();
+        }
+        function dataAtual(){
+          let data = new Date();
+          return data.getDate() + "/" + (data.getMonth()+1) + "/" + data.getUTCFullYear();
         }
     </script>
   </body>
